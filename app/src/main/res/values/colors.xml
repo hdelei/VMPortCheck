@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#848484</color>
+    <color name="fundo_preto">#000000</color>
+    <color name="fundo_title">#4d4f51</color>
+    <color name="white">#ffffff</color>
+    <color name="roxo">#500e56</color>
+    <color name="purple_shadow">#3e0a42</color>
+    <color name="green">#2daf91</color>
+    <color name="light_gray">#edefef</color>
+    <color name="black_shadow">#4f4f4f</color>
+    <color name="purple_font">#500e56</color>
+    <color name="gray_get_ip">#676767</color>
+
+</resources>

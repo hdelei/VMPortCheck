@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">VMPortCheck</string>
+    <string name="action_settings">Settings</string>
+    <string name="vm_check_ports">VM Check Ports</string>
+    <string name="name">Name</string>
+    <string name="lblTitle"> VM Check Ports</string>
+    <string name="txtURL">google.com</string>
+    <string name="txtPort">80</string>
+    <string name="lblURL">Host</string>
+    <string name="lblPort">Port</string>
+    <string name="lblPortIsOpen">Port status</string>
+    <string name="lblClear">X</string>
+    <string name="check_label">check</string>
+    <string name="txtMyIP">Click to get your public IP</string>
+    <string name="setPublicIP">___.___.___.___</string>
+
+</resources>

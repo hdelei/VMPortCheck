@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/roxo"
+    tools:context="com.example.vanderlei.vmportcheck.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/roxo"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:textAlignment="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/rounded_titlebar">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="7dp"
+                android:paddingTop="10dp"
+                android:text="@string/lblTitle"
+                android:textColor="@color/purple_font"
+                android:shadowColor="@color/black_shadow"
+                android:onClick="callHelpActivity"
+                android:shadowDx="-3"
+                android:shadowDy="-3"
+                android:shadowRadius="1"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/lblURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+
+                android:layout_weight=".60"
+                android:text="@string/lblURL"
+                android:textColor="@color/green"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight=".27"
+                android:text="@string/lblPort"
+                android:textColor="@color/green"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+
+            android:focusableInTouchMode="true">
+
+            <EditText
+                android:id="@+id/txtURL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight=".65"
+                android:background="@drawable/rounded_edittext_states"
+                android:layout_gravity="fill"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:inputType=""
+                android:padding="8dp"
+                android:text="@string/txtURL"
+                android:textColor="@color/fundo_preto"
+                android:textCursorDrawable="@null"
+                tools:ignore="LabelFor,TextFields" />
+
+            <EditText
+                android:id="@+id/txtPort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:layout_margin="8dp"
+                android:layout_weight=".30"
+                android:background="@drawable/rounded_edittext_states"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="5"
+                android:padding="8dp"
+                android:text="@string/txtPort"
+                android:textColor="@color/fundo_preto"
+                android:textCursorDrawable="@null"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/txtClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".06"
+                android:onClick="clearText"
+                android:text="@string/lblClear"
+                android:textColor="@color/green"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:textAlignment="center">
+
+            <Button
+                android:id="@+id/btCheck"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="5dp"
+                android:onClick="runCheck"
+                android:text="@string/check_label"
+                android:textAlignment="center"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="@string/lblPortIsOpen"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtPublicIP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/txtMyIP"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="10dp"
+                android:text="@string/setPublicIP"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/txtMyIP"
+                android:onClick="getMyIP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/rounded_get_ip_states"
+
+
+                android:text="@string/txtMyIP"
+                android:textColor="@color/purple_font"
+                android:textSize="21sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
