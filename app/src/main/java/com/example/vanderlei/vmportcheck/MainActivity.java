@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtPort;
     private TextView txtMyIP;
     private TextView txtPublicIP;
+    private Button btCheck;
 
     //For homescreen icon
     Context mContext = MainActivity.this;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show();
 
 
-        final Button btCheck = (Button) findViewById(R.id.btCheck);
+        btCheck = (Button) findViewById(R.id.btCheck);
         //btCheck.setFocusable(true);
 
         txtHost = (EditText) findViewById(R.id.txtURL);
@@ -49,25 +50,25 @@ public class MainActivity extends AppCompatActivity {
 
         txtPublicIP = (TextView) findViewById(R.id.txtPublicIP);
 
-        btCheck.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                txtStatus.setText("Obtaining status...");
-
-                int port;
-                port = Util.intTryParse(txtPort.getText().toString());
-                txtPort.setText("" + port);
-
-                String url = txtHost.getText().toString();
-                if (url.equals("")){
-                    Toast.makeText(MainActivity.this, "Invalid host", Toast.LENGTH_LONG).show();
-                    txtHost.setText("Invalid");
-                    txtStatus.setText("Change host and try again");
-                }
-                else{
-                    checkPorts(url, port);
-                }
-            }
-        });
+//        btCheck.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+////                txtStatus.setText("Obtaining status...");
+////
+////                int port;
+////                port = Util.intTryParse(txtPort.getText().toString());
+////                txtPort.setText("" + port);
+////
+////                String url = txtHost.getText().toString();
+////                if (url.equals("")){
+////                    Toast.makeText(MainActivity.this, "Invalid host", Toast.LENGTH_LONG).show();
+////                    txtHost.setText("Invalid");
+////                    txtStatus.setText("Change host and try again");
+////                }
+////                else{
+////                    checkPorts(url, port);
+////                }
+//            }
+//        });
 
 
         setHomeScreenIcon();
@@ -143,5 +144,23 @@ public class MainActivity extends AppCompatActivity {
     public void callHelpActivity(View v){
         Intent helpIntent = new Intent(this, HelpActivity.class);
         startActivity(helpIntent);
+    }
+
+    public void btCheck(View v){
+        txtStatus.setText("Obtaining status...");
+
+        int port;
+        port = Util.intTryParse(txtPort.getText().toString());
+        txtPort.setText("" + port);
+
+        String url = txtHost.getText().toString();
+        if (url.equals("")){
+            Toast.makeText(MainActivity.this, "Invalid host", Toast.LENGTH_LONG).show();
+            txtHost.setText("Invalid");
+            txtStatus.setText("Change host and try again");
+        }
+        else{
+            checkPorts(url, port);
+        }
     }
 }
