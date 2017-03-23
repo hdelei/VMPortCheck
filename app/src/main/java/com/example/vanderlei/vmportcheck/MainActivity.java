@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtPublicIP;
 
     //For homescreen icon
-    Context mContext=MainActivity.this;
+    Context mContext = MainActivity.this;
     public SharedPreferences appPreferences;
     boolean isAppInstalled = false;
 
@@ -32,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show();
 
 
         final Button btCheck = (Button) findViewById(R.id.btCheck);
-        btCheck.setFocusable(true);
+        //btCheck.setFocusable(true);
 
         txtHost = (EditText) findViewById(R.id.txtURL);
         txtHost.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         isAppInstalled = appPreferences.getBoolean("isAppInstalled",false);
         if(isAppInstalled==false){
 
-            //  create short code
+            //  create shortcut code
 
             Intent shortcutIntent = new Intent(getApplicationContext(),MainActivity.class);
             shortcutIntent.setAction(Intent.ACTION_MAIN);
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = appPreferences.edit();
             editor.putBoolean("isAppInstalled", true);
             editor.commit();
+
         }
     }
     /*

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,15 +26,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
 
-            android:background="@drawable/rounded_titlebar">
 
             <TextView
                 android:id="@+id/txtTitle"
                 android:layout_width="0dp"
+                android:paddingLeft="15dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="0dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif"
                 android:paddingBottom="7dp"
@@ -46,6 +46,7 @@
                 android:shadowDx="-3"
                 android:shadowDy="-3"
                 android:shadowRadius="1"
+                android:background="@drawable/rounded_titlebar"
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -147,30 +148,10 @@
                 android:id="@+id/btCheck"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-
                 android:layout_marginStart="5dp"
-                android:onClick="runCheck"
                 android:text="@string/check_label"
                 android:textAlignment="center"
                 android:textAllCaps="false" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/lblStatus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingTop="20dp"
-                android:text="@string/lblPortIsOpen"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_marginStart="8dp"
-                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -191,19 +172,37 @@
 
             <TextView
                 android:id="@+id/txtMyIP"
-                android:onClick="getMyIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:padding="5dp"
                 android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:background="@drawable/rounded_get_ip_states"
+                android:onClick="getMyIP"
+                android:padding="5dp"
 
 
                 android:text="@string/txtMyIP"
                 android:textColor="@color/purple_font"
                 android:textSize="21sp" />
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="20dp"
+                android:text="@string/lblPortIsOpen"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

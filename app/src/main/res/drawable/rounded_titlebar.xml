@@ -18,6 +18,7 @@
     android:shape="rectangle" android:padding="10dp">
 
 <solid android:color="@color/light_gray"/>
+
     <corners
         android:bottomRightRadius="3dp"
         android:bottomLeftRadius="3dp"
