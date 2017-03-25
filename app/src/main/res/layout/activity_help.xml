@@ -24,4 +24,8 @@
         android:textSize="30sp"
         tools:ignore="HardcodedText" />
 
+    <WebView android:id="@+id/helpV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </android.support.design.widget.CoordinatorLayout>
