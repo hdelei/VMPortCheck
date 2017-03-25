@@ -1,6 +1,6 @@
 package com.example.vanderlei.vmportcheck;
 
-import android.content.Context;
+//import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,22 +10,24 @@ import android.text.InputType;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+//import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtStatus;
     private EditText txtHost;
     private EditText txtPort;
-    private TextView txtMyIP;
+    //private TextView txtMyIP;
     private TextView txtPublicIP;
-    private Button btCheck;
+    //private Button btCheck;
 
     //For homescreen icon
-    Context mContext = MainActivity.this;
+    //Context mContext = MainActivity.this;
     public SharedPreferences appPreferences;
     boolean isAppInstalled = false;
 
@@ -33,10 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show();
 
-
-        btCheck = (Button) findViewById(R.id.btCheck);
+        //Button btCheck = (Button) findViewById(R.id.btCheck);
         //btCheck.setFocusable(true);
 
         txtHost = (EditText) findViewById(R.id.txtURL);
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtStatus = (TextView) findViewById(R.id.lblStatus);
 
-        txtMyIP = (TextView) findViewById(R.id.txtMyIP);
+        //TextView txtMyIP = (TextView) findViewById(R.id.txtMyIP);
 
         txtPublicIP = (TextView) findViewById(R.id.txtPublicIP);
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     public void setHomeScreenIcon(){
         appPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         isAppInstalled = appPreferences.getBoolean("isAppInstalled",false);
-        if(isAppInstalled==false){
+        if(!isAppInstalled){
 
             //  create shortcut code
 
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             SharedPreferences.Editor editor = appPreferences.edit();
             editor.putBoolean("isAppInstalled", true);
-            editor.commit();
+            editor.apply();
 
         }
     }
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         Get IP from MyIPAsync and update Host TextView with current result
      */
     public void getMyIP(View v){
-        txtPublicIP.setText("___.___.___.___");
+        txtPublicIP.setText(getString(R.string.setPublicIP));
         final MyIPAsync myIP = new MyIPAsync();
         myIP.execute(txtPublicIP);
     }
@@ -142,7 +142,8 @@ public class MainActivity extends AppCompatActivity {
         int port;
 
         port = Util.intTryParse(txtPort.getText().toString());
-        txtPort.setText("" + port);
+        //txtPort.setText(Integer.toString(port));
+        txtPort.setText(String.format(Locale.US,"%d", port));
 
         String url = txtHost.getText().toString();
         if (url.equals("")){
