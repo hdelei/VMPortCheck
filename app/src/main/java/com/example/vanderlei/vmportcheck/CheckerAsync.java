@@ -1,5 +1,6 @@
 package com.example.vanderlei.vmportcheck;
 
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.widget.TextView;
 import java.net.InetSocketAddress;
@@ -17,11 +18,17 @@ public class CheckerAsync extends AsyncTask<TextView, Void, Boolean> {
     int port;
     final int TIMEOUT = 500;
 
-    public CheckerAsync(String _host, int _port){
-        host = _host;
+    String portStr, isOpenStr, isClosedStr;
+
+    public CheckerAsync(String[] str, int _port){
+        host = str[0];
         port = _port;
         if (_port < 1)
             port = 0;
+
+        portStr = str[1];
+        isOpenStr = str[2];
+        isClosedStr = str[3];
     }
 
     @Override
@@ -42,9 +49,12 @@ public class CheckerAsync extends AsyncTask<TextView, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean isOpen){
+
+
         if (isOpen)
-            text.setText("Port "+ port +" is open on \n" + host);
+            text.setText(portStr + " "+ port +" " + isOpenStr +  " \n" + host);
+            //text.setText("Port "+ port +" is open on \n" + host);
         else
-            text.setText("Port "+ port +" is closed or no response from host");
+            text.setText(portStr + " " + port + " " + isClosedStr);
     }
 }

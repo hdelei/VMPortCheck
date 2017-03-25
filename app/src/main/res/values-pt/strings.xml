@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configurações</string>
+    <string name="check_label">checar</string>
+    <string name="lblPort">Porta</string>
+    <string name="lblPortIsOpen">Status da porta</string>
+    <string name="lblURL">Endereço</string>
+    <string name="name">Nome</string>
+    <string name="txtMyIP">Clique para obter seu IP público</string>
+    <string name="invalid">Inválido</string>
+    <string name="obtaining">Obtendo status...</string>
+    <string name="changeHost">Mude o endereço e tente novamente</string>
+    <string name="invalidHost">Endereço inválido!</string>
+    <string name="port">A porta</string>
+    <string name="isOpenStr">está aberta em</string>
+    <string name="isClosedStr">está fechada ou o servidor não responde</string>
+</resources>

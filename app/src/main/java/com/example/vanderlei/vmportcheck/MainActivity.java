@@ -50,27 +50,6 @@ public class MainActivity extends AppCompatActivity {
 
         txtPublicIP = (TextView) findViewById(R.id.txtPublicIP);
 
-//        btCheck.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-////                txtStatus.setText("Obtaining status...");
-////
-////                int port;
-////                port = Util.intTryParse(txtPort.getText().toString());
-////                txtPort.setText("" + port);
-////
-////                String url = txtHost.getText().toString();
-////                if (url.equals("")){
-////                    Toast.makeText(MainActivity.this, "Invalid host", Toast.LENGTH_LONG).show();
-////                    txtHost.setText("Invalid");
-////                    txtStatus.setText("Change host and try again");
-////                }
-////                else{
-////                    checkPorts(url, port);
-////                }
-//            }
-//        });
-
-
         setHomeScreenIcon();
     }
 
@@ -96,7 +75,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkPorts(String url, int port){
-        final CheckerAsync check = new CheckerAsync(url, port);
+        String[] str = { url,
+                getString(R.string.port),
+                getString(R.string.isOpenStr),
+                getString(R.string.isClosedStr)
+        };
+        final CheckerAsync check = new CheckerAsync(str, port);
         check.execute(txtStatus);
     }
 
@@ -147,17 +131,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btCheck(View v){
-        txtStatus.setText("Obtaining status...");
+        String obtaining, invalid, changeHost, invalidHost;
 
+        obtaining = getString(R.string.obtaining);
+        invalid = getString(R.string.invalid);
+        changeHost = getString(R.string.changeHost);
+        invalidHost = getString(R.string.invalidHost);
+
+        txtStatus.setText(obtaining);
         int port;
+
         port = Util.intTryParse(txtPort.getText().toString());
         txtPort.setText("" + port);
 
         String url = txtHost.getText().toString();
         if (url.equals("")){
-            Toast.makeText(MainActivity.this, "Invalid host", Toast.LENGTH_LONG).show();
-            txtHost.setText("Invalid");
-            txtStatus.setText("Change host and try again");
+            Toast.makeText(MainActivity.this, invalidHost, Toast.LENGTH_LONG).show();
+            txtHost.setText(invalid);
+            txtStatus.setText(changeHost);
         }
         else{
             checkPorts(url, port);
