@@ -13,4 +13,5 @@
     <string name="check_label">check</string>
     <string name="txtMyIP">Click to get your public IP</string>
     <string name="setPublicIP">___.___.___.___</string>
+    <string name="interrogation">\?</string>
 </resources>
