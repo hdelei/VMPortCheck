@@ -6,9 +6,9 @@
     <string name="lblPortIsOpen">Status da porta</string>
     <string name="lblURL">Endereço</string>
     <string name="name">Nome</string>
-    <string name="txtMyIP">Clique para obter seu IP público</string>
+    <string name="txtMyIP">Obter meu IP público</string>
     <string name="invalid">Inválido</string>
-    <string name="obtaining">Obtendo status...</string>
+    <string name="obtaining">Obtendo status&#8230;</string>
     <string name="changeHost">Mude o endereço e tente novamente</string>
     <string name="invalidHost">Endereço inválido!</string>
     <string name="port">A porta</string>
